@@ -1,6 +1,7 @@
 import {getGlobal} from '../utils/utils'
 import * as BrowserStorage from '../services/browser-storage'
 import * as HttpService from '../services/http-service';
+import { Modal } from '../components/modal';
 
 class Login {
     constructor() {
@@ -42,13 +43,16 @@ class Login {
         BrowserStorage.set('refresh_token_key', refresh_token_key, expiresDate.toUTCString());
         BrowserStorage.set('user_email', user.email, expiresDate.toUTCString());
 
-        // Redirect after successful login
-        alert("SUCCESS");
-        window.location.href = getGlobal('base_url');
+        const modal = new Modal();
+        modal.showMessage("Success, you will be redirected!");
+        setTimeout(() => {
+            window.location.href = getGlobal('base_url');
+        }, 1500);
     }
 
     handleError(error) {
-        alert("Error...");
+        const modal = new Modal();
+        modal.showMessage("Something went wrong, look console!");
         console.error('Error:', error);
     }
 }

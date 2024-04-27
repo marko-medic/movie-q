@@ -11,6 +11,23 @@
     <!-- Your header content goes here -->
     <h1><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
     <nav>
-        <?php wp_nav_menu(array('theme_location' => 'primary-menu')); ?>
+        <?php 
+            $auth_manager = new Auth_Manager();
+            $user_can_access_movies = $auth_manager->can_access_movies(); 
+        ?>
+        <ul>
+            <li style="display: block;">
+                <a href="<?php echo esc_url(home_url()) ?>">Home</a>
+            </li>
+            <li style="display: <?php echo $user_can_access_movies ? 'none' : 'block' ?>;">
+                <a href="<?php echo esc_url(home_url() . '/login') ?>">Login</a>
+            </li>
+            <li style="display: <?php echo !$user_can_access_movies ? 'none' : 'block' ?>;">
+                <a href="<?php echo esc_url(home_url() . '/movies') ?>">Movies</a>
+            </li>
+            <li style="display: block;">
+                <a href="<?php echo esc_url(home_url() . '/about') ?>">About</a>
+            </li>
+        </ul>
     </nav>
 </header>
