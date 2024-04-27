@@ -72,5 +72,4 @@ class Movie_Meta
     }
 }
 
-// Instantiate the class
-$movie_meta = new Movie_Meta();
+(new Movie_Meta());

@@ -65,4 +65,4 @@ class Movies_Custom_Post_Type
     }
 }
 
-$movies_post_type = new Movies_Custom_Post_Type();
+(new Movies_Custom_Post_Type());
