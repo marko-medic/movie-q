@@ -1,0 +1,14 @@
+{
+    "name": "marko/movies",
+    "autoload": {
+        "psr-4": {
+            "Marko\\Movies\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marko"
+        }
+    ],
+    "require": {}
+}
