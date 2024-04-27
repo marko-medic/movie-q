@@ -28,6 +28,9 @@
             <li style="display: block;">
                 <a href="<?php echo esc_url(home_url() . '/about') ?>">About</a>
             </li>
+            <li style="display: <?php echo !$user_can_access_movies ? 'none' : 'block' ?>;">
+                <a href="<?php echo esc_url(home_url() . '/logout') ?>">Logout</a>
+            </li>
         </ul>
     </nav>
 </header>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name:       Favorite Movie Quote
  * Description:       Example block scaffolded with Create Block tool.
@@ -13,7 +14,7 @@
  * @package CreateBlock
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
@@ -29,11 +30,10 @@ require_once plugin_dir_path(__FILE__) . '/inc/block-render.php';
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 
-function create_block_favorite_movie_quote_block_init() {
-	register_block_type( __DIR__ . '/build', [
+function create_block_favorite_movie_quote_block_init()
+{
+	register_block_type(__DIR__ . '/build', [
 		"render_callback" => "movies_dynamic_render"
-	] );
+	]);
 }
-add_action( 'init', 'create_block_favorite_movie_quote_block_init' );
-
-
+add_action('init', 'create_block_favorite_movie_quote_block_init');

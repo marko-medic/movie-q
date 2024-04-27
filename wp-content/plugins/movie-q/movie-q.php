@@ -17,4 +17,3 @@ if (!defined('ABSPATH')) {
 
 require_once plugin_dir_path(__FILE__) . '/inc/movie-cpt.php';
 require_once plugin_dir_path(__FILE__) . '/inc/movie-meta.php';
-
